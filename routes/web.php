@@ -35,4 +35,13 @@ require __DIR__ . '/auth.php';
 
 // rotta admin-page
 
-Route::get('/admin', [DashboardController::class, 'index']);
+Route::get('/admin', [DashboardController::class, 'index'])->middleware(['auth']);
+
+Route::middleware(['auth', 'verified'])
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(
+        function () {
+            Route::get('/', [DashboardController::class, 'index'])->name('index');
+        }
+    );
