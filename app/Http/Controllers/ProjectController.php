@@ -57,7 +57,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -65,7 +65,15 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+
+        $project->name = $request->name;
+        $project->description = $request->description;
+        $project->img = $request->img;
+        $project->url = $request->url;
+        $project->used_technologies = $request->used_technologies;
+        $project->save();
+
+        return redirect()->route('projects.show', $project->id);
     }
 
     /**
