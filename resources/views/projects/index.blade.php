@@ -29,5 +29,7 @@
             @endforeach
         </tbody>
     </table>
+
+    <a href="{{route('projects.create')}}" class="btn btn-primary">Aggiungi un progetto!</a>
 </div>
 @endsection
