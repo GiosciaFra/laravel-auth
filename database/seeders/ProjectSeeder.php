@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,27 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $projetcs = [
+            [
+                'name' => 'Ciao',
+                'description' => 'lorem ipsum',
+                'img' => '',
+                'used_technologies' => 'html,css,js',
+                'url' => 'https://github.com/GiosciaFra?tab=repositories',
+            ],
+        ];
+
+
+        foreach ($projetcs as $project) {
+            $newProject = new Project();
+
+            $newProject->name = $project['name'];
+            $newProject->description = $project['description'];
+            $newProject->img = $project['img'];
+            $newProject->used_technologies = $project['used_technologies'];
+            $newProject->url = $project['url'];
+
+            $newProject->save();
+        }
     }
 }

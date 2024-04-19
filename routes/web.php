@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -43,5 +44,14 @@ Route::middleware(['auth', 'verified'])
     ->group(
         function () {
             Route::get('/', [DashboardController::class, 'index'])->name('index');
+        }
+    );
+// rotte project
+Route::middleware(['auth', 'verified'])
+    ->name('projects.')
+    ->prefix('projects')
+    ->group(
+        function () {
+            Route::get('/', [ProjectController::class, 'index'])->name('index');
         }
     );

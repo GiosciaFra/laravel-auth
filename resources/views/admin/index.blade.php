@@ -5,5 +5,10 @@
         <h1>Admin page</h1>
 
         <h2>Benvenuto {{$user->name}}</h2>
+
+        <div>
+            
+            <a href="{{route('projects.index')}}">Vai ai miei progetti</a>
+        </div>
     </div>
 @endsection
