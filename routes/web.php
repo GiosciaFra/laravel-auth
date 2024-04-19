@@ -48,10 +48,8 @@ Route::middleware(['auth', 'verified'])
     );
 // rotte project
 Route::middleware(['auth', 'verified'])
-    ->name('projects.')
-    ->prefix('projects')
     ->group(
         function () {
-            Route::get('/', [ProjectController::class, 'index'])->name('index');
+            Route::resource('projects', ProjectController::class);
         }
     );

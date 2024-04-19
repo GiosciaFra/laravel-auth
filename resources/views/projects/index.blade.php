@@ -8,9 +8,10 @@
         <thead>
             <tr>
                 <th class="col">Nome</th>
-                <th class="col">Descrizione</th>
                 <th class="col">Tecnologie utilizzate</th>
                 <th class="col">Link progetto</th>
+                <th class="col">Dettagli progetto</th>
+
 
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{$project->used_technologies}}</td>
 
                 <td><a href="{{$project->url}}">Vedi i miei progetti!</a></td>
+                <td><a href="{{route('projects.show', $project->id)}}">Scopri di più</a></td>
 
             </tr>
             @endforeach

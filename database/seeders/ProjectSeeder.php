@@ -17,7 +17,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'Ciao',
                 'description' => 'lorem ipsum',
-                'img' => '',
+                'img' => 'https://picsum.photos/200',
                 'used_technologies' => 'html,css,js',
                 'url' => 'https://github.com/GiosciaFra?tab=repositories',
             ],
