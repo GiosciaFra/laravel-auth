@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-5">
-    <h1>Aggiungi un progetto </h1>
+    <h1>Modifica il progetto </h1>
 
     <form action="{{route('projects.update', $project->id)}}" method="POST" class="d-flex flex-column gap-4 " >
         @csrf
@@ -38,7 +38,7 @@
         <div class="d-flex gap-5 justify-content-center  ">
 
             <button type="submit" class="btn btn-warning text-white ">Salva la tua modifica</button>
-            
+
             <a href="{{route('projects.index')}}" class="btn btn-success">Torna alla lista dei progetti</a>
         </div>
 
