@@ -47,9 +47,9 @@ Route::middleware(['auth', 'verified'])
         }
     );
 // rotte project
-Route::middleware(['auth', 'verified'])
-    ->group(
-        function () {
-            Route::resource('projects', ProjectController::class);
-        }
-    );
+// Route::middleware(['auth', 'verified'])
+//     ->group(
+//         function () {
+Route::resource('projects', ProjectController::class)->middleware(['auth', 'verified']);
+    //     }
+    // );

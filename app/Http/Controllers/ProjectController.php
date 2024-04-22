@@ -31,13 +31,16 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+
+
+        $request->validated();
+
+
         $newProject = new Project();
 
-        $newProject->name = $request->name;
-        $newProject->description = $request->description;
-        $newProject->used_technologies = $request->used_technologies;
-        $newProject->img = $request->img;
-        $newProject->url = $request->url;
+
+        $newProject->fill($request->all());
+
 
         $newProject->save();
 
@@ -63,15 +66,11 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, Project $project)
+    public function update(StoreProjectRequest $request, Project $project)
     {
+        $request->validated();
 
-        $project->name = $request->name;
-        $project->description = $request->description;
-        $project->img = $request->img;
-        $project->url = $request->url;
-        $project->used_technologies = $request->used_technologies;
-        $project->save();
+        $project->update($request->all());
 
         return redirect()->route('projects.show', $project->id);
     }

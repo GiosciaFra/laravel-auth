@@ -10,33 +10,61 @@
 
         <div>
           <label for="title" class="form-label">Nome progetto</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name')}}">
+            @error('name')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>
+            @enderror
         </div>
 
         <div>
             <label for="description" class="form-label">Descrizione</label>
-            <textarea type="textarea" class="form-control" id="description" name="description" required></textarea>
+            <textarea type="textarea" class="form-control @error('description') is-invalid @enderror" id="description" name="description" >{{old('description')}}</textarea>
+            @error('description')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>
+            @enderror
         </div>
 
         <div>
-            <label for="img" class="form-label">Aggiungi una URL </label>
-            <input type="text" class="form-control" id="img" name="img">
+            <label for="img" class="form-label">Aggiungi un'immagine di copertina  </label>
+            <input type="text" class="form-control @error('img') is-invalid @enderror" id="img" name="img">
+            @error('img')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>
+            @enderror
         </div>
 
         <div>
             <label for="used_technologies" class="form-label">Tecnologie utilizzate</label>
-            <input type="text" class="form-control" id="used_technologies" name="used_technologies" required>
+            <input type="text" class="form-control @error('used_technologies') is-invalid @enderror" id="used_technologies" name="used_technologies" value="{{old('used_technologies')}}" >
+            @error('used_technologies')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>
+            @enderror
         </div>
 
         <div>
             <label for="url" class="form-label">Link repo</label>
-            <input type="text" class="form-control" id="url" name="url" required>
+            <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" value="{{old('url')}}">
+            @error('url')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>
+            @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary mt-4 w-25 ">Aggiungi Progetto</button>
+
+        <div class="d-flex gap-5 justify-content-center  ">
+            <button type="submit" class="btn btn-primary mt-4 ">Aggiungi Progetto</button>
+            <a href="{{route('projects.index')}}" class="btn btn-success mt-4">Torna ai miei progetti</a>
+        </div>
     </form>
 
-    <a href="{{route('projects.index')}}" class="btn btn-success mt-4">Torna ai miei progetti</a>
 </div>
     
 @endsection

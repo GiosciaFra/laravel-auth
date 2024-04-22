@@ -12,28 +12,54 @@
 
         <div>
           <label for="name" class="form-label">Nome progetto</label>
-          <input type="text" class="form-control" id="name" name="name" value='{{$project->name}}' required>
+          <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value='{{old('name') ?? $project->name}}' >
+            @error('name')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
 
         <div>
             <label for="description" class="form-label">Descrizione</label>
-            <textarea type="textarea" class="form-control" id="description" name="description" required> {{$project->description}}</textarea>
+            <textarea type="textarea" class="form-control @error('description') is-invalid @enderror" id="description" name="description" > {{old('description') ?? $project->description}}</textarea>
+             @error('description')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
 
         <div>
             <label for="img" class="form-label">Aggiungi una URL per inserire la copertina</label>
-            <input type="text" class="form-control" id="img" name="img" value='{{$project->img}}'>
+            <input type="text" class="form-control @error('img') is-invalid @enderror" id="img" name="img" value='{{$project->img}}'>
+             @error('img')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
 
         <div>
             <label for="used_technologies" class="form-label">Tecnologie utilizzate</label>
-            <textarea type="textarea" class="form-control" id="used_technologies" name="used_technologies" required> {{$project->used_technologies}}</textarea>
+            <textarea type="textarea" class="form-control @error('used_technologies') is-invalid @enderror" id="used_technologies" name="used_technologies" > {{old('used_technologies') ?? $project->used_technologies}}</textarea>
+             @error('used_technologies')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
 
         <div>
             <label for="url" class="form-label">Link repo</label>
-            <input type="text" class="form-control" id="url" name="url" value='{{$project->url}}' required>
+            <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" value='{{old('url') ?? $project->url}}' >
+             @error('url')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
+
 
         <div class="d-flex gap-5 justify-content-center  ">
 
