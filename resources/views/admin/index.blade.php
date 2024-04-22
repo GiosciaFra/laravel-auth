@@ -8,7 +8,7 @@
 
         <div>
             
-            <a href="{{route('projects.index')}}">Vai ai miei progetti</a>
+            <a href="{{route('admin.projects.index')}}">Vai ai miei progetti</a>
         </div>
     </div>
 @endsection

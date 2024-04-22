@@ -9,8 +9,8 @@
 
     <div class="d-flex justify-content-center gap-4">
 
-        <a href="{{route('projects.edit', $project->id)}}" class="btn btn-warning text-white  ">Modifica il progetto</a>
-        <a href="{{route('projects.index')}}" class="btn btn-success">Torna alla lista dei progetti</a>
+        <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning text-white  ">Modifica il progetto</a>
+        <a href="{{route('admin.projects.index')}}" class="btn btn-success">Torna alla lista dei progetti</a>
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina questo progetto</button>
     </div>
     
@@ -34,7 +34,7 @@
                 <div class="modal-footer">
 
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                    <form action="{{route('projects.destroy', $project->id)}}" method="POST">
+                    <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
                         @csrf
                         @method("DELETE")
 

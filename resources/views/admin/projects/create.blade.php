@@ -5,7 +5,7 @@
 <div class="container  py-5">
     <h1 class="text-center">Aggiungi un fumetto</h1>
 
-    <form action="{{route('projects.store')}}" method="POST" class="d-flex flex-column gap-4 " >
+    <form action="{{route('admin.projects.store')}}" method="POST" class="d-flex flex-column gap-4 " >
         @csrf
 
         <div>
@@ -61,7 +61,7 @@
 
         <div class="d-flex gap-5 justify-content-center  ">
             <button type="submit" class="btn btn-primary mt-4 ">Aggiungi Progetto</button>
-            <a href="{{route('projects.index')}}" class="btn btn-success mt-4">Torna ai miei progetti</a>
+            <a href="{{route('admin.projects.index')}}" class="btn btn-success mt-4">Torna ai miei progetti</a>
         </div>
     </form>
 

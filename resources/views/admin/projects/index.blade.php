@@ -23,13 +23,13 @@
                 <td>{{$project->used_technologies}}</td>
 
                 <td><a href="{{$project->url}}">Vedi i miei progetti!</a></td>
-                <td><a href="{{route('projects.show', $project->id)}}">Scopri di più</a></td>
+                <td><a href="{{route('admin.projects.show', $project->id)}}">Scopri di più</a></td>
 
             </tr>
             @endforeach
         </tbody>
     </table>
 
-    <a href="{{route('projects.create')}}" class="btn btn-primary">Aggiungi un progetto!</a>
+    <a href="{{route('admin.projects.create')}}" class="btn btn-primary">Aggiungi un progetto!</a>
 </div>
 @endsection

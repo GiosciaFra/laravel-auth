@@ -44,12 +44,12 @@ Route::middleware(['auth', 'verified'])
     ->group(
         function () {
             Route::get('/', [DashboardController::class, 'index'])->name('index');
+            Route::resource('projects', ProjectController::class);
         }
     );
 // rotte project
 // Route::middleware(['auth', 'verified'])
 //     ->group(
 //         function () {
-Route::resource('projects', ProjectController::class)->middleware(['auth', 'verified']);
     //     }
     // );
