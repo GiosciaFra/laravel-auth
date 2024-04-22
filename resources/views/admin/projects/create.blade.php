@@ -5,7 +5,7 @@
 <div class="container  py-5">
     <h1 class="text-center">Aggiungi un fumetto</h1>
 
-    <form action="{{route('admin.projects.store')}}" method="POST" class="d-flex flex-column gap-4 " >
+    <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-4 " >
         @csrf
 
         <div>
@@ -30,7 +30,7 @@
 
         <div>
             <label for="img" class="form-label">Aggiungi un'immagine di copertina  </label>
-            <input type="text" class="form-control @error('img') is-invalid @enderror" id="img" name="img">
+            <input type="file" class="form-control @error('img') is-invalid @enderror" id="img" name="img">
             @error('img')
             <div class="invalid-feedback">
                 {{$message}}

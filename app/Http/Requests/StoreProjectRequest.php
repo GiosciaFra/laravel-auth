@@ -25,8 +25,8 @@ class StoreProjectRequest extends FormRequest
             'name' => 'required|max:255',
             'used_technologies' => 'required|max:5000',
             'url' => 'required|max:5000',
-            'description' => 'required|max:5000'
-            // 'img' =>  'required|max:1000'
+            'description' => 'required|max:5000',
+            'img' =>  'file|max:1024|nullable|mimes:jpg,bmp,png'
         ];
     }
 
@@ -40,7 +40,9 @@ class StoreProjectRequest extends FormRequest
             'url.required' => 'Collega un link alla tua repo.',
             'url.max' => "l'url può avere massimo :max caratteri",
             'description.required' => 'Inserisci una breve descrizione del progetto.',
-            'description.max' => 'La descrizione può avere massimo :max caratteri'
+            'description.max' => 'La descrizione può avere massimo :max caratteri',
+            'img.mimes' => "Il file deve essere un'immagine",
+            'img.max' => 'La dimensione del file non deve superare i 1024 KB',
         ];
     }
 }
