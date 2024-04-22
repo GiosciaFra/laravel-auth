@@ -60,8 +60,8 @@
 
 
         <div class="d-flex gap-5 justify-content-center  ">
-            <button type="submit" class="btn btn-primary mt-4 ">Aggiungi Progetto</button>
-            <a href="{{route('admin.projects.index')}}" class="btn btn-success mt-4">Torna ai miei progetti</a>
+            <button type="submit" class="btn btn-outline-success mt-4 ">Aggiungi Progetto</button>
+            <a href="{{route('admin.projects.index')}}" class="btn btn-outline-info mt-4">Torna ai miei progetti</a>
         </div>
     </form>
 

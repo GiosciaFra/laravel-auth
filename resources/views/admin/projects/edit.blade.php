@@ -63,9 +63,9 @@
 
         <div class="d-flex gap-5 justify-content-center  ">
 
-            <button type="submit" class="btn btn-warning text-white ">Salva la tua modifica</button>
+            <button type="submit" class="btn btn-outline-success ">Salva la tua modifica</button>
 
-            <a href="{{route('admin.projects.index')}}" class="btn btn-success">Torna alla lista dei progetti</a>
+            <a href="{{route('admin.projects.index')}}" class="btn btn-outline-info">Torna alla lista dei progetti</a>
         </div>
 
     </form>
